@@ -27,7 +27,7 @@ public class Game{
         int totalBoot = 0;
         
         List<Card> newCard = new ArrayList<Card>();
-        Player chitra = new Player("chitra", false, newCard , myCash , boot, seen, chance, totalBoot);
+        Player chitra = new Player("chitra", true, newCard , myCash , boot, seen, chance, totalBoot);
         Player niku = new Player("niku", false, newCard, myCash , boot , seen, chance, totalBoot );
         Player bob = new Player("bob", false, newCard , myCash , boot , seen, chance, totalBoot );
         Player sam = new Player("sam", false, newCard , myCash , boot, seen, chance, totalBoot);
