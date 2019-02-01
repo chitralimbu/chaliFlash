@@ -11,7 +11,11 @@ import java.util.*;
  */
 public class Game{
 
-    /**
+    private static Scanner scanner;
+	private static Scanner scan;
+	private static Scanner scan2;
+
+	/**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -46,7 +50,7 @@ public class Game{
             Collections.rotate(myallPlayers, currentMove);
             
             System.out.println("Starting a new game ..... Press \"ENTER\" to continue...");
-            Scanner scanner = new Scanner(System.in);
+            scanner = new Scanner(System.in);
             scanner.nextLine();
             
             
@@ -207,7 +211,7 @@ public class Game{
             System.out.println("YOUR CARDS: ");
             printCards(p.getCards(), p);
             System.out.println("\nAll Players Have Seen, press, 0 to show, 1 to play, 2 to raise, 4 to fold ");
-            Scanner scan = new Scanner(System.in);
+            scan = new Scanner(System.in);
             int num = scan.nextInt();
             if(num == 4){
                 p.fold();
@@ -228,8 +232,8 @@ public class Game{
                 p.humanPlay(finalPlayers);
             }else{
                 System.out.println("You have not seen, press, 0 to play, 1 to see");
-                Scanner scan = new Scanner(System.in);
-                int num = scan.nextInt();
+                scan2 = new Scanner(System.in);
+                int num = scan2.nextInt();
                 if(num == 0){
                     System.out.println("YOU HAVE DECIDED TO PLAY, NOT TO SEE");
                     p.updateTotalBoot(finalPlayers, p.getTotalBoot() + p.getBoot());
@@ -390,7 +394,6 @@ public class Game{
     public static List<Player> Winner(List<Player> players){
         List<Player> allPlayers = players;
         List<Player> finalAllPlayer = new ArrayList<Player>();
-        List<Integer> intPlayerCombo = new ArrayList<Integer>();
         SortedSet<Integer> PlayerComboInt = new TreeSet<Integer>();
         
         for(Player x: allPlayers){
@@ -486,7 +489,6 @@ public class Game{
     //calculating the total of a pair so it can be accurately compared if two or more players have pairs. compare and extract the pair, multiply
     //the pair, divide odd number by 100 and add them together. 
     public static double winnerPair(List<Card> pair){
-        List<Integer> justNumber = new ArrayList<Integer>();
         double storePair = 1;
         double oddNumber = 1;
         

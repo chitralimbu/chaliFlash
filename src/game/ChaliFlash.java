@@ -11,7 +11,7 @@ import java.util.*;
  */
 
 //for the rules of the game.
-public abstract class ChaliFlash implements Moves{
+public abstract class ChaliFlash{
     public int minBoot;
     public String name;
     public Boolean human;
@@ -22,7 +22,7 @@ public abstract class ChaliFlash implements Moves{
     int totalBoot;
     
     
-    public ChaliFlash(String name, Boolean human, List<Card> cards, int cash, int minBoot, boolean seen, double chance, int toalBoot) {
+    public ChaliFlash(String name, Boolean human, List<Card> cards, int cash, int minBoot, boolean seen, double chance, int totalBoot) {
         this.name = name;
         this.human = human;
         this.cards = cards;

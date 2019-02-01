@@ -13,7 +13,9 @@ import java.util.*;
  */
 public class Player extends Recognise {
 
-    public Player(String name, Boolean human, List<Card> cards, int cash, int minBoot, boolean seen, double chance, int toalBoot) {
+    private Scanner sc;
+
+	public Player(String name, Boolean human, List<Card> cards, int cash, int minBoot, boolean seen, double chance, int toalBoot) {
         super(name, human, cards, cash, minBoot, seen, chance, toalBoot);
     }
     
@@ -82,7 +84,7 @@ public class Player extends Recognise {
     //method for human to choose what they want to do
     public void humanPlay(List<Player> finalPlayers){
         System.out.println("\nYou have seen, press, 0 to show, 1 to play, 2 to raise, 3 to fold \n");
-        Scanner sc = new Scanner(System.in);
+        sc = new Scanner(System.in);
         
         int num = sc.nextInt();
         setSeen(true);
@@ -182,18 +184,5 @@ public class Player extends Recognise {
         }
         
     }
-    
-
-    
-    
-    
-
-    
-//what moves can player have
-//play 
-//see 
-//fold
-//deal
-
     
 }
